@@ -1,3 +1,34 @@
+/* Note to future self: this is likely a 3-column and 4*-row grid layout
+The first row is just the header / nav
+The second* row is the list of returned results
+The third row is the end of the results (where the Goooogle logo and pages are)
+The fourth row is the footer
+* second row being many rows of results, possibly its own grid */
+
 html {
-    background-color: blue;
+}
+
+.logo-search-bar {
+    display: inline-flex;
+    align-items: center;
+    margin-top: 30px;
+}
+
+#google-logo {
+}
+
+#search-bar {
+    background: url("./images/magnifying-glass-lighter.png") no-repeat 14px center;
+    background-size: 16px;
+    width: 450px;
+    height: 40px;
+    border: 2px solid #ebebeb;
+    border-radius: 26px;
+    padding-left: 45px;
+}
+
+#search-bar:hover,
+#search-bar:focus {
+    box-shadow: 0.5px 1px 3px rgba(58, 57, 57, 0.2);
+    outline: none;
 }
