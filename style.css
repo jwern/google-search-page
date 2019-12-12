@@ -5,22 +5,70 @@ The third row is the end of the results (where the Goooogle logo and pages are)
 The fourth row is the footer
 * second row being many rows of results, possibly its own grid */
 
-html {
+* {
+    box-sizing: border-box;
 }
 
-.logo-search-bar {
-    display: inline-flex;
+html,
+body,
+.full-page-wrapper {
+    height: 100%;
+}
+
+.full-page-wrapper {
+    display: grid;
+    grid-template-columns: 150px minmax(auto, 600px) minmax(max-content, 1fr);
+    grid-template-rows: auto 1fr auto;
+    grid-template-areas:
+        "header header header"
+        ". main ."
+        ". footer .";
+}
+
+header {
+    grid-area: header;
+    display: grid;
+    grid-template-columns: 150px minmax(max-content, 2fr) 1fr;
+    grid-template-areas:
+        "logo search-bar sign-in";
     align-items: center;
-    margin-top: 30px;
+    margin-top: 20px;
 }
 
-#google-logo {
+.header-logo {
+    grid-area: logo;
+    padding-left: 30px;
+}
+
+.header-search {
+    grid-area: search-bar;
+}
+
+.header-sign-in {
+    grid-area: sign-in;
+    justify-self: end;
+    padding: 0 30px;
+}
+
+main {
+    grid-area: main;
+    display: grid;
+    grid-template-columns: minmax(auto, 600px);
+    grid-template-areas:
+    "results"
+}
+
+footer {
+    grid-area: footer;
+}
+
+#google-logo-png {
 }
 
 #search-bar {
     background: url("./images/magnifying-glass-lighter.png") no-repeat 14px center;
     background-size: 16px;
-    width: 450px;
+    width: 600px;
     height: 40px;
     border: 2px solid #ebebeb;
     border-radius: 26px;
@@ -31,4 +79,10 @@ html {
 #search-bar:focus {
     box-shadow: 0.5px 1px 3px rgba(58, 57, 57, 0.2);
     outline: none;
+}
+
+.results {
+    grid-area: results;
+    word-wrap: break-word;
+    padding-left: 10px;
 }
