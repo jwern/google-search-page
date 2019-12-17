@@ -13,6 +13,11 @@ html,
 body,
 .full-page-wrapper {
     height: 100%;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+a {
+    text-decoration: none;
 }
 
 .full-page-wrapper {
@@ -32,7 +37,7 @@ header {
     grid-template-areas:
         "logo search-bar apps-sign-in";
     align-items: center;
-    margin-top: 20px;
+    margin-top: 25px;
 }
 
 .header-logo {
@@ -53,8 +58,17 @@ header {
 }
 
 .sign-in-button {
-    width: 80px;
-    background-color: blue;
+    padding: 10px 27px;
+    margin-right: 20px;
+    border-radius: 4px;
+    /* background-color: #4285f4; */
+    background-color: #1a73e8;
+    color: white;
+    font-size: 14px;
+}
+
+.sign-in-button:hover {
+    background-color: #3280e6;
 }
 
 main {
@@ -69,12 +83,9 @@ footer {
     grid-area: footer;
 }
 
-#google-logo-png {
-}
-
 #search-bar {
-    background: url("./images/magnifying-glass-lighter.png") no-repeat 14px center;
-    background-size: 16px;
+    background: url("./images/magnifying-glass-blue.png") no-repeat 560px center;
+    background-size: 20px;
     width: 600px;
     height: 40px;
     border: 2px solid #ebebeb;
@@ -88,8 +99,24 @@ footer {
     outline: none;
 }
 
+.apps-icon {
+    margin: 0 15px;
+}
+
+.apps-icon ion-icon:hover {
+    border: 6px solid rgb(230, 230, 230);
+    border-radius: 100%;
+    background-color: rgb(230, 230, 230);
+    margin: -6px;
+}
+
 .results {
     grid-area: results;
     word-wrap: break-word;
     padding-left: 10px;
+}
+
+ion-icon {
+    font-size: 24px;
+    color: rgb(97, 97, 97);
 }
