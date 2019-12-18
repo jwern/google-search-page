@@ -20,6 +20,12 @@ a {
     text-decoration: none;
 }
 
+ul,
+li {
+    margin: 0;
+    padding: 0;
+}
+
 .full-page-wrapper {
     display: grid;
     grid-template-columns: 150px minmax(auto, 600px) minmax(max-content, 1fr);
@@ -33,11 +39,39 @@ a {
 header {
     grid-area: header;
     display: grid;
-    grid-template-columns: 150px minmax(max-content, 2fr) minmax(max-content, 1fr);
+    grid-template-columns: 150px minmax(max-content, 600px) minmax(max-content, 1fr);
+    grid-template-rows: max-content max-content;
     grid-template-areas:
-        "logo search-bar apps-sign-in";
+        "logo search-bar apps-sign-in"
+        ". upper-nav .";
     align-items: center;
     margin-top: 25px;
+    padding-bottom: 2px;
+    border-bottom: 0.5px solid rgb(224, 224, 224);
+}
+
+.upper-nav {
+    grid-area: upper-nav;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.upper-nav ul {
+    padding: 18px 0;
+}
+
+.upper-nav ul li {
+    display: inline;
+    padding: 0 12px 0 4px;
+}
+
+.upper-nav ul li a {
+    font-size: 13px;
+    color: gray;
+}
+
+.upper-nav ul li a:hover {
+    color: #1a73e8;
 }
 
 .header-logo {
@@ -87,10 +121,10 @@ footer {
     background: url("./images/magnifying-glass-blue.png") no-repeat 560px center;
     background-size: 20px;
     width: 600px;
-    height: 40px;
+    height: 50px;
     border: 2px solid #ebebeb;
     border-radius: 26px;
-    padding-left: 45px;
+    padding-left: 25px;
 }
 
 #search-bar:hover,
@@ -116,7 +150,42 @@ footer {
     padding-left: 10px;
 }
 
-ion-icon {
+.header-buttons ion-icon {
     font-size: 24px;
     color: rgb(97, 97, 97);
+}
+
+.upper-nav ion-icon {
+    font-size: 16px;
+    padding: 4px 4px 0 2px;
+    margin-bottom: -4px;
+}
+
+#nav-magnifying-glass {
+    width: 18px;
+    padding: 4px 4px 0 2px;
+    margin-bottom: -2px;
+}
+
+#tools-button {
+    background-color: transparent;
+    padding: 7px 11px;
+}
+
+#tools-button:hover {
+    background-color: rgb(247, 247, 247);
+    padding: 6px 10px;
+    border: 1px solid rgb(190, 190, 190);
+    border-radius: 4px;
+    color: gray;
+}
+
+#nav-all-link {
+    border-bottom: 4px solid #3280e6;
+    padding: 0 12px 18px;
+    margin-bottom: 0 -12px -18px;
+}
+
+#nav-all-link a {
+    color: #3280e6;
 }
